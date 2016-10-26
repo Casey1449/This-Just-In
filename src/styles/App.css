@@ -1,0 +1,31 @@
+.main-banner {
+  display: inline-block;
+  margin-left: 40%;
+}
+
+button {
+  float: right;
+  margin-top: 35px;
+  margin-right: 35px;
+}
+
+.main-nav {
+  padding: 5px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.nav-list {
+  text-align: center;
+}
+
+.nav-list li {
+  text-align: center;
+  display: inline;
+  margin: 15px;
+}
+
+.main-wrapper {
+  padding-top: 50px;
+  padding-left: 150px;
+}
