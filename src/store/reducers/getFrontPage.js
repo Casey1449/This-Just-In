@@ -1,4 +1,6 @@
-export default function ( state = { sources: ['the-washington-post', 'the-new-york-times'] }, action ) {
+import { initialState } from "../initial-state.js";
+
+export default function ( state = initialState.frontPageSources, action ) {
   switch (action.type) {
     case 'GET_WAPO':
       return Object.assign({}, state, action.payload);

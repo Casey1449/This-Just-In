@@ -5,7 +5,7 @@ const Frontpage = ( props ) => {
     <div className="main-wrapper">
       <section>
         <p>Content goes here.</p>
-        <button onClick={()=> props.fetchSource(props.getFrontPage.sources[1])}>
+        <button onClick={()=> props.fetchSource(props.getFrontPage.frontPageSources[1])}>
           Get content
         </button>
         <section>{ props.getFrontPage.articles ?
