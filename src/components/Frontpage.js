@@ -1,14 +1,17 @@
 import React from "react";
 
-module.exports = () => {
-
+const Frontpage = ( props ) => {
   return (
     <div className="main-wrapper">
       <section>
         <p>Content goes here.</p>
-        <button>Get content</button>
+        <button onClick={props.getWapo}>
+            Get content</button>
+        <section>{props.getFrontPage.value}</section>
       </section>
     </div>
   );
 
 };
+
+export default Frontpage;
