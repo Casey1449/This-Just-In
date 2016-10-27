@@ -5,9 +5,9 @@ const Frontpage = ( props ) => {
     <div className="main-wrapper">
       <section>
         <p>Content goes here.</p>
-        <button onClick={props.getWapo}>
+        <button onClick={()=>props.fetchWapo()}>
             Get content</button>
-        <section>{props.getFrontPage.value}</section>
+        <section></section>
       </section>
     </div>
   );
