@@ -1,18 +1,15 @@
 
 
-export const getWapo = () => {
+export const getWapo = (json) => {
   return {
     type: 'GET_WAPO',
-    data: 'fakedata'
+    payload: json
   };
 };
 
 
-// export const fetchWapo = () =>  dispatch => {
-//   return {data: 'fake data here'};
-// };
-
-
-// return fetch('https://newsapi.org/v1/articles?source=the-washington-post&sortBy=top&apiKey=f04919cef67a4043af58f3efde1d9340')
-// .then(response => response.json())
-// .then(json => dispatch(getWapo(json)));
+export const fetchSource = (source, key='f04919cef67a4043af58f3efde1d9340') =>  dispatch => {
+  return fetch(`https://newsapi.org/v1/articles?source=${source}&apiKey=${key}`)
+        .then(response => response.json())
+        .then(json => dispatch(getWapo(json)));
+};
