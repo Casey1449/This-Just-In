@@ -1,15 +1,29 @@
+import sources from '../sources';
 
-
-export const getWapo = (json) => {
+export const pickSource = (id) => {
   return {
-    type: 'GET_WAPO',
+    type: 'PICK',
+    id
+  };
+};
+
+export const setFrontSources = () => {
+  return {
+    type: 'SET_FRONT_SOURCES',
+    sources: sources.filter(arr => arr.picked)
+  };
+};
+
+export const getHeadlines = (json) => {
+  return {
+    type: 'GET_HEADLINES',
     payload: json
   };
 };
 
-
-export const fetchSource = (source, key='f04919cef67a4043af58f3efde1d9340') =>  dispatch => {
-  return fetch(`https://newsapi.org/v1/articles?source=${source}&apiKey=${key}`)
-        .then(response => response.json())
-        .then(json => dispatch(getWapo(json)));
+export const fetchFrontPageArticles = (source, key='f04919cef67a4043af58f3efde1d9340') =>
+  (dispatch) => {
+    return fetch(`https://newsapi.org/v1/articles?source=${source}&apiKey=${key}`)
+          .then(response => response.json())
+          .then(json => dispatch(getHeadlines(json)));
 };

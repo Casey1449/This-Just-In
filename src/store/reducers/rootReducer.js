@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
-import getFrontPage from './getFrontPage';
+import frontPageSources from './frontPageSources';
+import allSources from './pickSource';
+import frontPageArticles from './frontPageArticles';
 
 export default combineReducers({
-  getFrontPage
+  frontPageSources,
+  allSources,
+  frontPageArticles
 });

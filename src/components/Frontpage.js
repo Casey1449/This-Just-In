@@ -5,18 +5,14 @@ const Frontpage = ( props ) => {
     <div className="main-wrapper">
       <section>
         <p>Content goes here.</p>
-        <button onClick={()=> props.fetchSource(props.getFrontPage.sources[1])}>
+        <button
+          onClick={ () => { props.frontPageSources.forEach((source) => {
+                            props.fetchFrontPageArticles(source.id); });
+                          }
+                        }>
           Get content
         </button>
-        <section>{ props.getFrontPage.articles ?
-                    props.getFrontPage.articles.map( (article) => {
-                      return (<ul>
-                                <h3>{article.title}</h3>
-                                <p>{article.author}</p>
-                                <p>{article.description}</p>
-                                <a href={article.url}>Link to full article</a>
-                              </ul>);
-                    }) : 'Press button to get content' }
+        <section>
         </section>
       </section>
     </div>
@@ -25,3 +21,13 @@ const Frontpage = ( props ) => {
 };
 
 export default Frontpage;
+
+// { props.frontPageSources.articles[0] ?
+//   props.frontPageSources.articles.map( (article) => {
+//     return (<ul>
+//               <h3>{article.title}</h3>
+//               <p>{article.author}</p>
+//               <p>{article.description}</p>
+//               <a href={article.url}>Link to full article</a>
+//             </ul>);
+//           })   : 'Press button to get content' }
