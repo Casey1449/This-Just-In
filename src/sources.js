@@ -9,13 +9,13 @@ module.exports = [
   {
     id: 'the-washington-post',
     page: 'main',
-    picked: false
+    picked: true
   },
 
   {
     id: 'the-economist',
     page: 'main',
-    picked: false
+    picked: true
   },
 
   {
