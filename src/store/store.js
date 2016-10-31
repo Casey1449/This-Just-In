@@ -10,7 +10,6 @@ const enhancers = compose(
 
 const store = createStore(
   rootReducer,
-  initialState,
   enhancers);
 
 export default store;

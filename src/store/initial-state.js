@@ -1,3 +1,7 @@
+import sources from '../sources';
+
 export const initialState = {
-  frontPageSources: ['the-washington-post', 'the-new-york-times']
+  frontPageSources: [],
+  allSources: sources,
+  articles: []
 };
