@@ -1,10 +1,16 @@
 import React from "react";
+import Article from "./Article";
+import _ from "lodash";
 
 const Frontpage = ( props ) => {
+
+  const articles1 = props.frontPageArticles.map((source)=>source.articles);
+  console.log(articles1);
+  const allArticles = _.flatten(articles1);
+
   return (
     <div className="main-wrapper">
       <section>
-        <p>Content goes here.</p>
         <button
           onClick={ () => { props.frontPageSources.forEach((source) => {
                             props.fetchFrontPageArticles(source.id); });
@@ -13,6 +19,8 @@ const Frontpage = ( props ) => {
           Get content
         </button>
         <section>
+          { props.frontPageArticles.length > 0 ? articles1.map((item)=>item.map((article)=><Article a={article}/>))
+                                                  : <p>show stuff here</p> }
         </section>
       </section>
     </div>
@@ -21,6 +29,8 @@ const Frontpage = ( props ) => {
 };
 
 export default Frontpage;
+
+
 
 // { props.frontPageSources.articles[0] ?
 //   props.frontPageSources.articles.map( (article) => {
