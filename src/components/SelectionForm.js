@@ -15,7 +15,14 @@ module.exports = (props) => {
       <CheckBox source={'the-huffington-post'} name={'The Huffington Post'} /><br/>
       <CheckBox source={'usa-today'} name={'USA Today'} /><br/>
       <CheckBox source={'the-wall-street-journal'} name={'The Wall Street Journal'} /><br/>
-      <button onClick={props.setFrontSources}>Create Homepage</button>
+      <button
+        onClick={ () => { props.setFrontSources();
+                          props.frontPageSources.forEach((source) => {
+                            props.fetchFrontPageArticles(source.id); });
+                        }
+                }>
+      Create Homepage
+      </button>
     </div>
   );
 
