@@ -8,7 +8,7 @@ module.exports = (props) => {
   return (
     <div className="selection-container">
       <CheckBox source={'the-new-york-times'} name={'The New York Times'} /><br/>
-      <CheckBox source={'the-washington-post'} name={'The Washington Post'} bool={props.allSources[1].picked}/><br/>
+      <CheckBox source={'the-washington-post'} name={'The Washington Post'} /><br/>
       <CheckBox source={'the-economist'} name={'The Economist'} /><br/>
       <CheckBox source={'cnn'} name={'CNN'} /><br/>
       <CheckBox source={'bbc-news'} name={'BBC News'} /><br/>

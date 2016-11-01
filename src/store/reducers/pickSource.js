@@ -1,12 +1,12 @@
-const sources = require('../../sources.js');
 
 export default function ( state = [], action ) {
   switch (action.type) {
     case 'PICK':
-      return state.map((item) => {
+      let main = state.main.map((item) => {
         if(item.id !== action.id) { return item; }
           item.picked = !item.picked;
           return item;
+      return [...state, main];
         });
 
     default:
