@@ -1,5 +1,7 @@
 import React from "react";
 import CheckBox from "../containers/CheckBoxContainer";
+import { Link } from "react-router";
+
 
 module.exports = (props) => {
 
