@@ -1,4 +1,3 @@
-import { initialState } from '../initial-state.js';
 
 //This will get the front-pagers on click during initial setup,
 //or else they'll be hydrated from firebase.

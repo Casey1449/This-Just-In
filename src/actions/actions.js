@@ -10,7 +10,7 @@ export const pickSource = (id) => {
 export const setFrontSources = () => {
   return {
     type: 'SET_FRONT_SOURCES',
-    sources: sources.filter(arr => arr.picked)
+    sources: sources.main.filter(arr => arr.picked)
   };
 };
 
