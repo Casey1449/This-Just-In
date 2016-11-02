@@ -9,6 +9,10 @@ export default class SelectionForm extends React.Component{
     super();
   }
 
+  componentDidMount(){
+    this.props.clearFrontArticles();
+  }
+
   componentWillUnmount(){
     this.props.setFrontSources();
       this.props.frontPageSources.forEach((source) => {
@@ -16,8 +20,8 @@ export default class SelectionForm extends React.Component{
   }
 
   render(){
+
     const sources = this.props.allSources.main;
-    const fpsources = this.props.frontPageSources;
 
     return (
       <div className="selection-container">
