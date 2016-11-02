@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./styles/App.css";
 import Header from "./containers/HeaderContainer";
 import Frontpage from "./containers/FrontpageContainer";
-import SelectionForm from "./containers/SelectionFormContainer";
+import SelectionPage from "./containers/SelectionPageContainer";
 
 class App extends Component {
 

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import SelectionForm from '../components/SelectionForm';
+import SelectionPage from '../components/SelectionPage';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/actions';
 
@@ -11,4 +11,4 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(actions, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SelectionForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SelectionPage);

@@ -1,9 +1,22 @@
 import sources from '../sources';
 
-export const pickSource = (id) => {
+export const pickSource = (id, page) => {
+
   return {
-    type: 'PICK',
-    id
+    type: 'PICK_MAIN',
+    pick: {id, page}
+  };
+};
+
+export const clearFrontSources = () => {
+  return {
+    type: 'CLEAR_SOURCES',
+  };
+};
+
+export const clearFrontArticles = () => {
+  return {
+    type: 'CLEAR_FRONT'
   };
 };
 

@@ -6,6 +6,8 @@ export default function ( state = [], action ) {
   switch (action.type) {
     case 'SET_FRONT_SOURCES':
       return action.sources;
+    case 'CLEAR_FRONT':
+      return [];
     default:
       return state;
     }

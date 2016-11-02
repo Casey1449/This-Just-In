@@ -8,13 +8,35 @@ module.exports = () => {
     <nav className="main-nav">
       <ul className="nav-list">
         <li>
-          <Link to="/front">
+          <Link to="/main">
             Home
           </Link>
         </li>
-        <li>Sports</li>
-        <li>Business</li>
-        <li>Science</li>
+        <li>
+          <Link to="/sports">
+            Sports
+          </Link>
+        </li>
+        <li>
+          <Link to="/business">
+            Business
+          </Link>
+        </li>
+        <li>
+          <Link to="/tech">
+            Tech & Science
+          </Link>
+        </li>
+        <li>
+          <Link to="/world">
+            World
+          </Link>
+        </li>
+        <li>
+          <Link to="/culture">
+            Pop Culture
+          </Link>
+        </li>
         <li>Pinned headlines</li>
       </ul>
     </nav>
