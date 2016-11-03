@@ -4,7 +4,7 @@
 
 export default function ( state = {}, action ) {
   switch (action.type) {
-    case 'SET_FRONT_SOURCES':
+    case 'SET_SOURCES':
       let page = action.page.toString();
       return { ...state, [page]: action.sources };
     case 'CLEAR_FRONT':

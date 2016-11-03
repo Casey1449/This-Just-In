@@ -1,7 +1,8 @@
-export default function ( state = [], action ) {
+export default function ( state = {}, action ) {
   switch (action.type) {
     case 'GET_HEADLINES':
-      return [ ...state, action.payload ];
+      let page = action.page.toString();
+      return { ...state, [page]: action.payload};
     case 'CLEAR_FRONT':
       return [];
     default:

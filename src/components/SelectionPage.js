@@ -14,6 +14,19 @@ export default class SelectionPage extends React.Component{
     this.props.clearFrontArticles();
   }
 
+  fetch(page){
+    this.props.allSources[page].forEach((source) => {
+      if(source.picked === true){
+        this.props.fetchArticles(source.id, page);}
+    });
+  }
+
+  componentWillUnmount(){
+    for(let page in this.props.allSources){
+      this.fetch(page);
+    }
+  }
+
   render(){
 
     const mainSources = this.props.allSources.main;
