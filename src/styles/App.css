@@ -15,6 +15,28 @@ button {
   border-bottom: 1px solid black;
 }
 
+.selection-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.source-selection-form {
+  padding: 5px 0 0 30px;
+  margin: 10px;
+  position: relative;
+  height: 400px;
+  width: 20%;
+  min-width: 185px;
+  border: 1px solid black;
+}
+
+.page-link {
+  position: absolute;
+  bottom: 15px;;
+}
+
 .nav-list {
   text-align: center;
 }
@@ -28,9 +50,4 @@ button {
 .main-wrapper {
   padding-top: 50px;
   padding-left: 150px;
-}
-
-.selection-container {
-  margin-left: 100px;
-  margin-top: 50px
 }

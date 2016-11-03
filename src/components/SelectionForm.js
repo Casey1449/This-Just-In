@@ -1,40 +1,21 @@
-import React from "react";
-import CheckBox from "../containers/CheckBoxContainer";
-import { Link } from "react-router";
+import React from 'react';
+import { Link } from 'react-router';
+import CheckBox from '../containers/CheckBoxContainer';
 
-
-export default class SelectionForm extends React.Component{
-
-  constructor(){
-    super();
-  }
-
-  componentDidMount(){
-    this.props.clearFrontArticles();
-  }
-
-  componentWillUnmount(){
-    this.props.setFrontSources();
-      this.props.frontPageSources.forEach((source) => {
-        this.props.fetchFrontPageArticles(source.id); });
-  }
-
-  render(){
-
-    const sources = this.props.allSources.main;
-
-    return (
-      <div className="selection-container">
-        {sources.map(item => <div>
-                                <CheckBox
-                                  source={item.id}
-                                  name={item.name}
-                                  bool={item.picked}
-                                />
-                                <br/>
-                              </div>)}
-      <Link to="/front">Show my front page!</Link>
-      </div>
-    );
-  }
-}
+export default (props) => {
+  let route = "/" + props.page;
+  return( <section className='source-selection-form'>
+            <h2> {props.page} page </h2>
+            {props.source.map(item => <div>
+                                    <CheckBox
+                                      page = {props.page}
+                                      source={item.id}
+                                      name={item.name}
+                                      bool={item.picked}
+                                    />
+                                    <br/>
+                                  </div>)}
+            <button onClick={()=>props.setFrontSources(props.page)}>Save {props.page} sources</button>
+            <Link to={route} className="page-link">Show my {props.page} page!</Link>
+          </section>);
+};

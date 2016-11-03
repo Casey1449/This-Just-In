@@ -1,12 +1,13 @@
 
 export default function ( state = [], action ) {
   switch (action.type) {
-    case 'PICK':
-      let main = state.main.map((item) => {
-        if(item.id !== action.id) { return item; }
+    case 'PICK_MAIN':
+      let page = action.pick.page.toString();
+      let cat = state[page].map((item) => {
+        if(item.id !== action.pick.id) { return item; }
           item.picked = !item.picked;
           return item;
-      return [...state, main];
+      return [...state, cat];
         });
 
     default:
