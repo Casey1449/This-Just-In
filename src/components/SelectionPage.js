@@ -14,12 +14,6 @@ export default class SelectionPage extends React.Component{
     this.props.clearFrontArticles();
   }
 
-  componentWillUnmount(){
-    this.props.setFrontSources('main');
-      this.props.pickedSources.main.forEach((source) => {
-        this.props.fetchFrontPageArticles(source.id); });
-  }
-
   render(){
 
     const mainSources = this.props.allSources.main;
@@ -41,20 +35,3 @@ export default class SelectionPage extends React.Component{
     );
   }
 }
-
-
-
-
-
-// <section className="main-sources-form">
-// <h2> Front page </h2>
-// {main.map(item => <div>
-//   <CheckBox
-//   source={item.id}
-//   name={item.name}
-//   bool={item.picked}
-//   />
-//   <br/>
-//   </div>)}
-//   <Link to="/front">Show my front page!</Link>
-//   </section>
