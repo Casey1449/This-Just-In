@@ -14,13 +14,13 @@ ReactDOM.render(
     <Router history = {browserHistory}>
       <Route path='/' component={App} >
 
-        <Route path='/main' component={Frontpage} />
+        <Route path='/main' component={Frontpage} page={'main'}/>
         <Route path='/SelectionPage' component={SelectionPage} />
-        <Route path='/sports' component={Frontpage} />
-        <Route path='/business' component={Frontpage} />
-        <Route path='/tech' component={Frontpage} />
-        <Route path='/world' component={Frontpage} />
-        <Route path='/culture' component={Frontpage} />
+        <Route path='/sports' component={Frontpage} page={'sports'}/>
+        <Route path='/business' component={Frontpage} page={'business'}/>
+        <Route path='/tech' component={Frontpage} page={'tech'}/>
+        <Route path='/world' component={Frontpage} page={'world'}/>
+        <Route path='/culture' component={Frontpage} page={'culture'}/>
 
       </Route>
     </Router>

@@ -8,8 +8,11 @@ class Frontpage extends React.Component{
   }
 
   componentWillMount(){
-    this.props.frontPageSources.forEach((source) => {
+    let thisPage = this.props.route.page.toString();
+    if(this.props.pickedSources[thisPage]){
+    this.props.pickedSources[thisPage].forEach((source) => {
       this.props.fetchFrontPageArticles(source.id); });
+    }
   }
 
   render(){

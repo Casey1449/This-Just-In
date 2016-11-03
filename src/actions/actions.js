@@ -20,10 +20,11 @@ export const clearFrontArticles = () => {
   };
 };
 
-export const setFrontSources = () => {
+export const setFrontSources = (page) => {
   return {
     type: 'SET_FRONT_SOURCES',
-    sources: sources.main.filter(arr => arr.picked)
+    page: page,
+    sources: sources[page].filter(arr => arr.picked)
   };
 };
 

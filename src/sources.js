@@ -13,7 +13,7 @@ module.exports = {
     { id: 'newsweek',name: 'Newsweek',  picked: false }
   ],
 
-  financial: [
+  business: [
     { id: 'the-economist', name: 'The Economist', picked: false },
     { id: 'the-wall-street-journal', name: 'The Wall Street Journal', picked: false },
     { id: 'bloomberg', name: 'Bloomberg', picked: false },
@@ -33,6 +33,8 @@ module.exports = {
     { id: 'techcrunch', name: 'TechCrunch', picked: false },
     { id: 'techradar', name: 'TechRadar', picked: false },
     { id: 'the-next-web', name: 'The Next Web', picked: false },
+    { id: 'national-geographic', name: 'National Geographic', picked: false },
+    { id: 'new-scientist', name: 'New Scientist', picked: false },
   ],
 
   sports: [
@@ -47,7 +49,7 @@ module.exports = {
     { id: 'the-sport-bible', name: 'The Sport Bible', picked: false }
   ],
 
-  international: [
+  world: [
     { id: 'business-insider-uk', name: 'Business Insider UK', picked: false },
     { id: 'abc-news-au', name: 'ABC News Australia', picked: false },
     { id: 'daily-mail', name: 'The Daily Mail', picked: false },
@@ -67,8 +69,6 @@ module.exports = {
   ],
 
   culture: [
-    { id: 'national-geographic', name: 'National Geographic', picked: false },
-    { id: 'new-scientist', name: 'New Scientist', picked: false },
     { id: 'buzzfeed', name: 'Buzzfeed', picked: false },
     { id: 'entertainment-weekly', name: 'Entertainment Weekly', picked: false },
     { id: 'mashable', name: 'Mashable', picked: false },

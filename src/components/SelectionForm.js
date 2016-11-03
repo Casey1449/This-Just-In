@@ -15,6 +15,7 @@ export default (props) => {
                                     />
                                     <br/>
                                   </div>)}
-            <Link to={route}>Show my {props.page} page!</Link>
+            <button onClick={()=>props.setFrontSources(props.page)}>Save {props.page} sources</button>
+            <Link to={route} className="page-link">Show my {props.page} page!</Link>
           </section>);
 };
