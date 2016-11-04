@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Frontpage from '../components/Frontpage';
+import Section from '../components/Section';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/actions';
 
@@ -11,4 +11,4 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(actions, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Frontpage);
+export default connect(mapStateToProps, mapDispatchToProps)(Section);
