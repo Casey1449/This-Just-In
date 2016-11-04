@@ -1,23 +1,20 @@
-import React from "react";
-import Article from "./Article";
+import React from 'react';
+import Article from './Article';
 
 export default (props) => {
 
   const thisPageArticles = props.frontPageArticles[props.route.page];
-  const arts = [];
-  const print = (obj) => {
-    for(let source in obj){
-      obj[source].forEach( article => arts.push(article)); }
-  };
 
-  print(thisPageArticles);
+  const articles = [];
+
+  for(let source in thisPageArticles){
+    thisPageArticles[source].forEach(article => articles.push(article)); }
 
   return (
-
-    <section className="major-section-wrapper">
+    <section className='major-section-wrapper'>
     { thisPageArticles ?
-        arts.map( article =>
-            <Article a={ article } /> )
+        articles.map( item =>
+            <Article article={ item } /> )
         : <p> No sources selected </p> }
     </section>
   );

@@ -5,8 +5,10 @@ export default function ( state = {}, action ) {
       let source = action.payload.source;
       let articles = action.payload.articles;
       return { ...state, [page]: { ...state[page], [source]: articles }};
-    case 'CLEAR_FRONT':
+
+    case 'CLEAR':
       return [];
+
     default:
       return state;
     }

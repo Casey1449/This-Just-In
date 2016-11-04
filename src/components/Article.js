@@ -1,13 +1,13 @@
 import React from 'react';
 
-export default ({a}) => {
+export default ({article}) => {
   return(
     <section>
-      <h2>{a.title}</h2>
-      <h4>{a.description}</h4>
-      <p>{a.author}</p>
-      <img src={a.urlToImage} width='500'/>
-      <p><a href={a.url}>Link to full text</a></p>
+      <h2>{article.title}</h2>
+      <h4>{article.description}</h4>
+      <p>{article.author}</p>
+      <img src={article.urlToImage} width='500'/>
+      <p><a href={article.url}>Link to full text</a></p>
     </section>
   );
 };

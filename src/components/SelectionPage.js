@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router";
-import SelectionForm from "../containers/SelectionFormContainer";
+import React from 'react';
+import { Link } from 'react-router';
+import SelectionForm from '../containers/SelectionFormContainer';
 
 export default class SelectionPage extends React.Component{
 
   componentDidMount(){
-    this.props.clearFrontArticles();
+    this.props.clearArticles();
   }
 
   fetch(page){
@@ -20,13 +20,13 @@ export default class SelectionPage extends React.Component{
 
   render(){
     return (
-      <div className="selection-container">
-        <SelectionForm page={"main"} source={this.props.allSources.main}/>
-        <SelectionForm page={"sports"} source={this.props.allSources.sports}/>
-        <SelectionForm page={"business"} source={this.props.allSources.business}/>
-        <SelectionForm page={"tech"} source={this.props.allSources.tech} />
-        <SelectionForm page={"world"} source={this.props.allSources.world} />
-        <SelectionForm page={"culture"} source={this.props.allSources.culture} />
+      <div className='selection-container'>
+        <SelectionForm page={'main'} source={this.props.allSources.main}/>
+        <SelectionForm page={'sports'} source={this.props.allSources.sports}/>
+        <SelectionForm page={'business'} source={this.props.allSources.business}/>
+        <SelectionForm page={'tech'} source={this.props.allSources.tech} />
+        <SelectionForm page={'world'} source={this.props.allSources.world} />
+        <SelectionForm page={'culture'} source={this.props.allSources.culture} />
       </div>
     );
   }
