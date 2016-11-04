@@ -9,6 +9,7 @@ module.exports = (props) => {
             defaultChecked={props.bool}
             />
       {props.name}
+      <br/>
     </label>
   );
 };

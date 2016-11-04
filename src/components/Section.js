@@ -1,24 +1,24 @@
 import React from "react";
 import Article from "./Article";
 
-class Section extends React.Component{
+export default (props) => {
 
-  render(){
+  const thisPageArticles = props.frontPageArticles[props.route.page];
+  const arts = [];
+  const print = (obj) => {
+    for(let source in obj){
+      obj[source].forEach( article => arts.push(article)); }
+  };
 
-    const articles = this.props.frontPageArticles;
-    const thisPage = this.props.route.page;
+  print(thisPageArticles);
 
-    return (
-      <div className="main-wrapper">
-        <section>
-            { articles[thisPage] ?
-              articles[thisPage].articles.map(article =>
-                  <Article a={article}/>
-              ) : <p>No sources selected</p> }
-        </section>
-      </div>
-    );
-  }
-}
+  return (
 
-export default Section;
+    <section className="major-section-wrapper">
+    { thisPageArticles ?
+        arts.map( article =>
+            <Article a={ article } /> )
+        : <p> No sources selected </p> }
+    </section>
+  );
+};
