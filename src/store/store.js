@@ -7,9 +7,19 @@ const enhancers = compose(
   applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : f => f);
 
+const initialState = {
+  auth: {
+    status: 'ANONYMOUS',
+    username: null,
+    uid: null
+  },
+  allSources: sources
+};
+
 const store = createStore(
   rootReducer,
-  {allSources: sources},
-  enhancers);
+  initialState,
+  enhancers
+);
 
 export default store;

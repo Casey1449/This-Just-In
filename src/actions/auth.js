@@ -14,9 +14,7 @@ const fbRef = new firebase.auth.GoogleAuthProvider();
 
 //change 'firebase.auth()' to rbref?
 
-export default {
-
-  startListeningToAuth: () => {
+const startListeningToAuth = () => {
     return (dispatch, getState) => {
       firebase.auth().onAuthStateChanged(userData => {
         if (userData) {
@@ -34,10 +32,11 @@ export default {
         }
       });
     };
-  },
+  };
 
-  logIn: () => {
+  const logIn = () => {
     return (dispatch, getState) => {
+      console.log('login fired');
       dispatch( {
         type: 'ATTEMPTING_LOGIN'
       });
@@ -53,9 +52,9 @@ export default {
         console.log('login failed', error);
       });
     };
-  },
+  };
 
-  logOut: () => {
+  const logOut = () => {
     return (dispatch, getState) => {
       dispatch({
         type: 'LOGOUT'
@@ -68,5 +67,10 @@ export default {
         console.log('logout failed', error);
       });
     };
-  }
+  };
+
+module.exports = {
+  startListeningToAuth,
+  logIn,
+  logOut
 };

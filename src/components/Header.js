@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import { Link } from 'react-router';
+import AuthBox from '../containers/AuthBoxContainer';
 
 export default () => {
   return (
@@ -9,8 +10,7 @@ export default () => {
       <Link to='/SelectionPage'>
       <button className='settings-button'>Settings</button>
       </Link>
-      <button className='logout-button'>Log out</button>
-      <p className='welcome-message'> Welcome back, Username </p>
+      <AuthBox />
       <Navbar />
     </header>
   );

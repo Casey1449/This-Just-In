@@ -9,13 +9,20 @@ export default (props) => {
 
   for(let source in thisPageArticles){
     thisPageArticles[source].forEach(article => articles.push(article)); }
-
-  return (
-    <section className='major-section-wrapper'>
-    { thisPageArticles ?
-        articles.map( item =>
-            <Article article={ item } /> )
-        : <p> No sources selected </p> }
-    </section>
-  );
+  if (props.auth.status === 'LOGGED_IN'){
+    return (
+      <section className='major-section-wrapper'>
+      { thisPageArticles ?
+          articles.map( item =>
+              <Article article={ item } /> )
+          : <p> No sources selected </p> }
+      </section>
+    );
+  } else {
+    return (
+      <section className='major-section-wrapper'>
+        <h2> Log in to see your {props.route.page} page </h2>
+      </section>
+    );
+  }
 };
