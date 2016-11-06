@@ -3,6 +3,10 @@
   margin-left: 40%;
 }
 
+.welcome-message {
+  float: right;
+}
+
 button {
   float: right;
   margin-top: 35px;
