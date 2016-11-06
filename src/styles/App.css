@@ -3,6 +3,10 @@
   margin-left: 40%;
 }
 
+.authbox {
+  float: right;
+}
+
 button {
   float: right;
   margin-top: 35px;
