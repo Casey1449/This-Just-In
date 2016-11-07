@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 import SelectionForm from '../containers/SelectionFormContainer';
+import firebase from 'firebase';
+import _ from 'lodash';
 
 export default class SelectionPage extends React.Component{
 
@@ -14,7 +16,17 @@ export default class SelectionPage extends React.Component{
     });
   }
 
+  saveSources() {
+    let sources = _.mapValues(this.props.allSources, (page) => {
+      return page.filter(i => i.picked);
+    });
+
+    firebase.database().ref(this.props.auth.uid).set({sources});
+  }
+
   componentWillUnmount(){
+    let dem = this.saveSources();
+    console.log(dem);
     for(let page in this.props.allSources){ this.fetch(page); }
   }
 
