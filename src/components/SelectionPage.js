@@ -25,8 +25,7 @@ export default class SelectionPage extends React.Component{
   }
 
   componentWillUnmount(){
-    let dem = this.saveSources();
-    console.log(dem);
+    this.saveSources();
     for(let page in this.props.allSources){ this.fetch(page); }
   }
 

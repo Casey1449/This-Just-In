@@ -1,8 +1,36 @@
 import React, { Component } from 'react';
 import './styles/App.css';
 import Header from './containers/HeaderContainer';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import firebase from 'firebase';
+import * as actions from './actions/actions';
+// import * as actions from './actions/firebase';
 
 class App extends Component {
+
+  componentWillReceiveProps(nextProps) {
+    const { fetchUserSources, auth } = this.props;
+    const currentAuthStatus = auth.status;
+    const incomingAuthStatus = nextProps.auth.status;
+    const incomingID = nextProps.auth.uid;
+
+    if (incomingAuthStatus !== currentAuthStatus && incomingAuthStatus === 'LOGGED_IN') {
+      fetchUserSources(incomingID);
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    if(prevProps.userSources !== this.props.userSources){
+      for(let page in this.props.userSources){ this.fetch(page); }
+    }
+  }
+
+  fetch(page){
+    this.props.userSources[page].forEach((source) => {
+      this.props.fetchArticles(source.id, page);
+    });
+  }
 
   render() {
     return (
@@ -14,4 +42,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => state;
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(actions, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,20 +1,40 @@
 import firebase from 'firebase';
-const DB = firebase.database();
-const User = DB.auth().currentUser.uid;
-const userMain = DB.ref(`${User}/sources/main`);
-const userSports = DB.ref(`${User}/sources/sports`);
 
-export const saveUserSources = () => {
+// const User = DB.auth().currentUser.uid;
+// const userMain = DB.ref(`${User}/sources/main`);
+// const userSports = DB.ref(`${User}/sources/sports`);
 
+export const fetchUserSources = (uid) => {
+  const user = firebase.database().ref(uid);
+
+  if(uid){
+    return (dispatch) => {
+
+      user.once('value').then((snapshot) => {
+
+        let userSources = snapshot.val().sources;
+
+        let pickedSources = Object.assign({}, userSources);
+
+        console.log(pickedSources);
+
+        dispatch({
+          type: 'LOAD_USER_SOURCES',
+          pickedSources
+        });
+
+      });
+    };
+  }
 };
 
-function writeUserData(userId, name, email, imageUrl) {
-  firebase.database().ref('users/' + userId).set({
-    username: name,
-    email: email,
-    profile_picture : imageUrl
-  });
-}
+// function writeUserData(userId, name, email, imageUrl) {
+//   firebase.database().ref('users/' + userId).set({
+//     username: name,
+//     email: email,
+//     profile_picture : imageUrl
+//   });
+// }
 
 // function fetchAllSources() {
 //   return (dispatch, getState) => {
