@@ -9,6 +9,7 @@ export default (props) => {
 
   for(let source in thisPageArticles){
     thisPageArticles[source].forEach(article => articles.push(article)); }
+
   if (props.auth.status === 'LOGGED_IN'){
     return (
       <section className='major-section-wrapper'>

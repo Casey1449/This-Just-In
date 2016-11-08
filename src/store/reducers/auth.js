@@ -1,4 +1,4 @@
-export default function authReducer(state = {}, action) {
+export default function (state = {}, action) {
   switch(action.type) {
     case 'ATTEMPTING_LOGIN':
       return {
@@ -6,12 +6,7 @@ export default function authReducer(state = {}, action) {
         username: 'guest',
         uid: null
       };
-    case 'LOGOUT':
-      return {
-        status: 'ANONYMOUS',
-        username: 'guest',
-        uid: null
-      };
+
     case 'LOGIN':
       return {
         status: 'LOGGED_IN',

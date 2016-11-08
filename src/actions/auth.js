@@ -42,6 +42,7 @@ const startListeningToAuth = () => {
       });
       firebase.auth().signInWithPopup(fbRef)
       .then(result => {
+        console.log(result);
         dispatch({
           type: 'LOGIN',
           uid: result.user.uid,
