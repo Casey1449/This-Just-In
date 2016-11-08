@@ -9,7 +9,7 @@ export default class SelectionPage extends React.Component{
   componentDidMount(){
     this.props.clearArticles();
   }
-
+  //
   componentWillMount(){
     const all = this.props.allSources;
 
