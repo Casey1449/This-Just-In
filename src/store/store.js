@@ -22,7 +22,6 @@ const initialState = {
     uid: null
   },
   allSources: sources,
-  pickedSources: null
 };
 
 const store = createStore(

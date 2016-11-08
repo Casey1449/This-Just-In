@@ -6,12 +6,12 @@ export default function (state = {}, action) {
         username: 'guest',
         uid: null
       };
-    case 'LOGOUT':
-      return {
-        status: 'ANONYMOUS',
-        username: 'guest',
-        uid: null
-      };
+    // case 'LOGOUT':
+    //   return {
+    //     status: 'ANONYMOUS',
+    //     username: 'guest',
+    //     uid: null
+    //   };
     case 'LOGIN':
       return {
         status: 'LOGGED_IN',

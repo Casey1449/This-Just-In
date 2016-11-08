@@ -10,10 +10,29 @@ export default class SelectionPage extends React.Component{
     this.props.clearArticles();
   }
 
-  fetch(page){
-    this.props.allSources[page].forEach((source) => {
-      if(source.picked){ this.props.fetchArticles(source.id, page); }
-    });
+  componentWillMount(){
+    const all = this.props.allSources;
+
+    if(this.props.userSources){
+      for(let topic in all){
+        all[topic].forEach((thing) => {
+          this.updatePicked(thing);
+        });
+      }
+    }
+  }
+  // fetch(page){
+  //   this.props.allSources[page].forEach((source) => {
+  //     if(source.picked){ this.props.fetchArticles(source.id, page); }
+  //   });
+  // }
+  updatePicked(item) {
+    const saved = this.props.userSources;
+    for (let page in saved){
+      if (saved[page].find( i => i.id === item.id )){
+        this.props.matchPicked(item.id, page);
+      }
+    }
   }
 
   saveSources() {
@@ -25,8 +44,7 @@ export default class SelectionPage extends React.Component{
   }
 
   componentWillUnmount(){
-    this.saveSources();
-    for(let page in this.props.allSources){ this.fetch(page); }
+    this.props.fetchUserSources(this.props.auth.uid);
   }
 
   render(){
@@ -38,6 +56,7 @@ export default class SelectionPage extends React.Component{
         <SelectionForm page={'tech'} source={this.props.allSources.tech} />
         <SelectionForm page={'world'} source={this.props.allSources.world} />
         <SelectionForm page={'culture'} source={this.props.allSources.culture} />
+        <button onClick={()=>this.saveSources()}>Save Selections</button>
       </div>
     );
   }

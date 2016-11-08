@@ -9,6 +9,13 @@ export const pickSource = (id, page) => {
   };
 };
 
+export const matchPicked = (id, page) => {
+  return {
+    type: 'MATCH_PICK',
+    pick: {id, page}
+  };
+};
+
 export const clearArticles = () => {
   return {
     type: 'CLEAR'
