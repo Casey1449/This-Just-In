@@ -12,8 +12,6 @@ firebase.initializeApp(config);
 
 const fbRef = new firebase.auth.GoogleAuthProvider();
 
-//change 'firebase.auth()' to rbref?
-
 const startListeningToAuth = () => {
     return (dispatch, getState) => {
       firebase.auth().onAuthStateChanged(userData => {

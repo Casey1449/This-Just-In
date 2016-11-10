@@ -1,4 +1,6 @@
-export default function ( state = [], action ) {
+import allSources from '../../sources';
+
+export default function ( state = allSources, action ) {
   switch (action.type) {
     case 'PICK':
     let page = action.pick.page.toString();

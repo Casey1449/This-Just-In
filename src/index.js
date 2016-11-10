@@ -11,10 +11,10 @@ import SelectionPage from './containers/SelectionPageContainer';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history = {browserHistory}>
+    <Router history={browserHistory}>
       <Route path='/' component={App} >
         <IndexRoute component={SignIn} />
-        <Route path = '/main' component={Section} page={'main'}/>
+        <Route path='/main' component={Section} page={'main'}/>
         <Route path='/SelectionPage' component={SelectionPage} />
         <Route path='/sports' component={Section} page={'sports'}/>
         <Route path='/business' component={Section} page={'business'}/>
@@ -26,17 +26,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-
-// var App = React.createClass({
-//   render: function() {
-//     return (
-//       <Locations>
-//         <Location path="/" handler={MainPage} />
-//         /* Check if user is logged in, redirect to login page if not */
-//         <Location path="/account/:username" logged_in={this.state.logged_in} handler={this.state.logged_in ? AccountPage : createRedirect("/login")} />
-//         <Location path={/\/friends\/(\d+)\/(photos|wall)/} logged_in={this.state.logged_in} handler={FriendsPage}
-//       matchKeys={['id', 'pageName']} />
-//       </Locations>
-//     )
-//   }
-// })

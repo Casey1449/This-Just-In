@@ -3,9 +3,7 @@ import './styles/App.css';
 import Header from './containers/HeaderContainer';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import firebase from 'firebase';
 import * as actions from './actions/actions';
-// import * as actions from './actions/firebase';
 
 class App extends Component {
 
@@ -22,7 +20,11 @@ class App extends Component {
 
   componentDidUpdate(prevProps, prevState){
     if(prevProps.userSources !== this.props.userSources){
-      for(let page in this.props.userSources){ this.fetch(page); }
+      for(let page in this.props.userSources){
+        if(this.props.userSources.hasOwnProperty(page)){
+          this.fetch(page);
+        }
+      }
     }
   }
 

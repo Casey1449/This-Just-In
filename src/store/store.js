@@ -2,7 +2,6 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import rootReducer from './reducers/rootReducer';
 import thunk from 'redux-thunk';
 import sources from '../sources';
-import firebase from 'firebase';
 
 const enhancers = compose(
   applyMiddleware(thunk),
@@ -15,7 +14,7 @@ const enhancers = compose(
 //   });
 // };
 
-const initialState = {
+export const initialState = {
   auth: {
     status: 'ANONYMOUS',
     username: null,
