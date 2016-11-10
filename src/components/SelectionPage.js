@@ -2,6 +2,8 @@ import React from 'react';
 import SelectionForm from '../containers/SelectionFormContainer';
 import firebase from 'firebase';
 import _ from 'lodash';
+import { browserHistory } from "react-router";
+
 
 export default class SelectionPage extends React.Component{
 
@@ -37,7 +39,10 @@ export default class SelectionPage extends React.Component{
       return page.filter(i => i.picked);
     });
 
-    firebase.database().ref(this.props.auth.uid).set({sources});
+    firebase.database().ref(this.props.auth.uid).set({sources}).then(()=>{
+      browserHistory.push('/main');
+    });
+
   }
 
   componentWillUnmount(){
