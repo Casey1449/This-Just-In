@@ -9,7 +9,7 @@ module.exports = () => {
       <ul className='nav-list'>
         <li>
           <Link to='/main'>
-            Home
+            Main
           </Link>
         </li>
         <li>
@@ -37,7 +37,6 @@ module.exports = () => {
             Pop Culture
           </Link>
         </li>
-        <li>Pinned headlines</li>
       </ul>
     </nav>
   );
