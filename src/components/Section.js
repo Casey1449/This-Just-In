@@ -8,14 +8,22 @@ export default (props) => {
   const articles = [];
 
   for(let source in thisPageArticles){
-    thisPageArticles[source].forEach(article => articles.push(article)); }
+    if(thisPageArticles.hasOwnProperty(source)){
+      thisPageArticles[source].forEach((article) => {
+        articles.push(article);
+      });
+    }
+  }
 
   if (props.auth.status === 'LOGGED_IN'){
     return (
       <section className='major-section-wrapper'>
       { thisPageArticles ?
           articles.map( item =>
-              <Article article={ item } /> )
+              <Article
+                article={ item }
+                key={ item.title }
+              /> )
           : <p> No sources selected </p> }
       </section>
     );

@@ -1,6 +1,4 @@
-import sources from '../sources';
 import firebase from 'firebase';
-
 
 export const pickSource = (id, page) => {
   return {

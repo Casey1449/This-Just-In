@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 import SelectionForm from '../containers/SelectionFormContainer';
 import firebase from 'firebase';
 import _ from 'lodash';
@@ -15,17 +14,15 @@ export default class SelectionPage extends React.Component{
 
     if(this.props.userSources){
       for(let topic in all){
-        all[topic].forEach((thing) => {
-          this.updatePicked(thing);
-        });
+        if(all.hasOwnProperty(topic)){
+          all[topic].forEach((thing) => {
+            this.updatePicked(thing);
+          });
+        }
       }
     }
   }
-  // fetch(page){
-  //   this.props.allSources[page].forEach((source) => {
-  //     if(source.picked){ this.props.fetchArticles(source.id, page); }
-  //   });
-  // }
+
   updatePicked(item) {
     const saved = this.props.userSources;
     for (let page in saved){
@@ -44,11 +41,12 @@ export default class SelectionPage extends React.Component{
   }
 
   componentWillUnmount(){
-    this.props.fetchUserSources(this.props.auth.uid);
+    if(this.props.auth.uid){ this.props.fetchUserSources(this.props.auth.uid); }
   }
 
   render(){
     return (
+      this.props.auth.uid ?
       <div className='selection-container'>
         <SelectionForm page={'main'} source={this.props.allSources.main}/>
         <SelectionForm page={'sports'} source={this.props.allSources.sports}/>
@@ -58,6 +56,8 @@ export default class SelectionPage extends React.Component{
         <SelectionForm page={'culture'} source={this.props.allSources.culture} />
         <button onClick={()=>this.saveSources()}>Save Selections</button>
       </div>
+      :
+      <h1>Log in to do stuff</h1>
     );
   }
 }

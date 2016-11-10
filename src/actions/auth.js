@@ -1,4 +1,5 @@
 var firebase = require("firebase");
+import { browserHistory } from "react-router";
 
 var config = {
   apiKey: "AIzaSyDfp5U4FX_xgZVls-neLDarIIsq8l5pJEw",
@@ -11,8 +12,6 @@ var config = {
 firebase.initializeApp(config);
 
 const fbRef = new firebase.auth.GoogleAuthProvider();
-
-//change 'firebase.auth()' to rbref?
 
 const startListeningToAuth = () => {
     return (dispatch, getState) => {
@@ -36,18 +35,19 @@ const startListeningToAuth = () => {
 
   const logIn = () => {
     return (dispatch, getState) => {
-      console.log('login fired');
       dispatch( {
         type: 'ATTEMPTING_LOGIN'
       });
       firebase.auth().signInWithPopup(fbRef)
       .then(result => {
-        console.log(result);
         dispatch({
           type: 'LOGIN',
           uid: result.user.uid,
           username: result.user.displayName
         });
+      })
+      .then(()=>{
+        browserHistory.push('/main');
       })
       .catch(error => {
         console.log('login failed', error);
@@ -62,7 +62,7 @@ const startListeningToAuth = () => {
       });
       firebase.auth().signOut()
       .then(() => {
-        console.log('Logged out');
+        browserHistory.push('/');
       })
       .catch(error => {
         console.log('logout failed', error);
