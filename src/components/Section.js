@@ -24,7 +24,8 @@ export default (props) => {
                 article={ item }
                 key={ item.title }
               /> )
-          : <p> No sources selected </p> }
+          : <h2> No {props.route.page} sources selected </h2>
+          }
       </section>
     );
   } else {
