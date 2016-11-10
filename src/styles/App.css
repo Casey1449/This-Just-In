@@ -1,10 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+}
+
 .main-banner {
-  display: inline-block;
-  margin-left: 40%;
+  margin-left: 20%;
+  display: inline;
+  font-family: 'Faster One', cursive;
+  font-size: 5em;
+  height: 100px;
 }
 
 .authbox {
   float: right;
+  padding-top: 35px;
 }
 
 button {
@@ -13,8 +25,17 @@ button {
   margin-right: 35px;
 }
 
+.authbox button{
+  margin-top: 0;
+}
+
+.greeting {
+  display: inline;
+  margin-right: 25px;
+}
+
 .main-nav {
-  padding: 5px;
+  height: 70px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
@@ -42,16 +63,45 @@ button {
 }
 
 .nav-list {
-  text-align: center;
+  margin: 0;
+  height: 70px;
 }
 
 .nav-list li {
+  padding-top: 25px;
   text-align: center;
-  display: inline;
-  margin: 15px;
+  display: inline-block;
+  height: 70px;
+  width: 112px;
+  margin: 0px 10px 0px 10px;
+}
+
+.nav-list a {
+  height: 70px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-list li:hover {
+  background-color: gray;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-list .active li{
+  background-color: gray;
+  color: white;
 }
 
 .major-section-wrapper {
-  padding-top: 50px;
-  padding-left: 150px;
+  width: 75%;
+  margin: auto;
+  padding-left: 15%;
+}
+
+.major-section-wrapper section {
+  border-bottom: 1px solid black;
+  align-items: center;
+  margin:0;
+  width: 80%;
 }
