@@ -10,7 +10,7 @@ export default class SelectionPage extends React.Component{
   componentDidMount(){
     this.props.clearArticles();
   }
-  //
+
   componentWillMount(){
     const all = this.props.allSources;
 
@@ -52,17 +52,22 @@ export default class SelectionPage extends React.Component{
   render(){
     return (
       this.props.auth.uid ?
-      <div className='selection-container'>
-        <SelectionForm page={'main'} source={this.props.allSources.main}/>
-        <SelectionForm page={'sports'} source={this.props.allSources.sports}/>
-        <SelectionForm page={'business'} source={this.props.allSources.business}/>
-        <SelectionForm page={'tech'} source={this.props.allSources.tech} />
-        <SelectionForm page={'world'} source={this.props.allSources.world} />
-        <SelectionForm page={'culture'} source={this.props.allSources.culture} />
-        <button onClick={()=>this.saveSources()}>Save Selections</button>
-      </div>
+        <div className='selection-page-wrapper'>
+          <div className='selection-container'>
+            <SelectionForm page={'main'} source={this.props.allSources.main}/>
+            <SelectionForm page={'sports'} source={this.props.allSources.sports}/>
+            <SelectionForm page={'business'} source={this.props.allSources.business}/>
+            <SelectionForm page={'tech'} source={this.props.allSources.tech} />
+            <SelectionForm page={'world'} source={this.props.allSources.world} />
+            <SelectionForm page={'culture'} source={this.props.allSources.culture} />
+          </div>
+          <button className='save-sources-button'
+          onClick={()=>this.saveSources()}>
+          Save Selections
+          </button>
+        </div>
       :
-      <h1>Log in to do stuff</h1>
+        <h1>Log in to do stuff</h1>
     );
   }
 }

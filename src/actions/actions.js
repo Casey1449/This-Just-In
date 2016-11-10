@@ -40,20 +40,14 @@ export const fetchUserSources = (uid) => {
 
   if(uid){
     return (dispatch) => {
-
       user.once('value').then((snapshot) => {
-
         let userSources = snapshot.val().sources;
-
         let pickedSources = Object.assign({}, userSources);
-
-        console.log(pickedSources);
 
         dispatch({
           type: 'LOAD_USER_SOURCES',
           pickedSources
         });
-
       });
     };
   }

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 import CheckBox from '../containers/CheckBoxContainer';
 
 export default (props) => {
@@ -13,6 +12,5 @@ export default (props) => {
                                             name={item.name}
                                             bool={item.picked}
                                           /> )}
-            <Link to={ '/' + props.page } className='page-link'>Show my {props.page} page!</Link>
           </section> );
 };

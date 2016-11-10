@@ -7,13 +7,6 @@ const enhancers = compose(
   applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : f => f);
 
-// const getSources = () => {
-//   var userId = firebase.auth().currentUser.uid;
-//   return firebase.database().ref(userId).once('value').then(function(snapshot) {
-//     var username = snapshot.val().username;
-//   });
-// };
-
 export const initialState = {
   auth: {
     status: 'ANONYMOUS',

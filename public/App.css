@@ -9,8 +9,8 @@ header {
 .main-banner {
   margin-left: 20%;
   display: inline;
-  font-family: 'Faster One', cursive;
-  font-size: 5em;
+  font-family: 'Diplomata SC', cursive;
+  font-size: 3.5em;
   height: 100px;
 }
 
@@ -47,15 +47,6 @@ button {
   justify-content: center;
 }
 
-.source-selection-form {
-  padding: 5px 0 0 30px;
-  margin: 10px;
-  position: relative;
-  height: 400px;
-  width: 20%;
-  min-width: 185px;
-  border: 1px solid black;
-}
 
 .page-link {
   position: absolute;
@@ -71,7 +62,7 @@ button {
   padding-top: 25px;
   text-align: center;
   display: inline-block;
-  height: 70px;
+  height: 68px;
   width: 112px;
   margin: 0px 10px 0px 10px;
 }
@@ -104,4 +95,31 @@ button {
   align-items: center;
   margin:0;
   width: 80%;
+}
+
+.source-selection-form {
+  padding: 5px 0 0 30px;
+  margin: 10px;
+  position: relative;
+  height: 400px;
+  width: 20%;
+  min-width: 185px;
+  border: 1px solid black;
+}
+
+.save-sources-button {
+  display: block;
+  width: 200px;
+  font-size: 1.2em;
+  border: none;
+  height: 80px;
+  border-radius: 4px;
+  margin-right: 44%;
+  margin-bottom: 25px;
+  margin-top: 5px;
+}
+
+.save-sources-button:hover {
+  background-color: gray;
+  color: white;
 }
