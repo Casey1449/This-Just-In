@@ -7,36 +7,36 @@ module.exports = () => {
   return (
     <nav className='main-nav'>
       <ul className='nav-list'>
-        <li>
-          <Link to='/main'>
+      <Link to='/main' activeClassName="active">
+          <li>
             Main
-          </Link>
-        </li>
-        <li>
-          <Link to='/sports'>
+          </li>
+        </Link>
+        <Link to='/sports' activeClassName="active">
+          <li>
             Sports
-          </Link>
-        </li>
-        <li>
-          <Link to='/business'>
+          </li>
+        </Link>
+        <Link to='/business' activeClassName="active">
+          <li>
             Business
-          </Link>
-        </li>
-        <li>
-          <Link to='/tech'>
+          </li>
+        </Link>
+        <Link to='/tech' activeClassName="active">
+          <li>
             Tech & Science
-          </Link>
-        </li>
-        <li>
-          <Link to='/world'>
+          </li>
+        </Link>
+        <Link to='/world' activeClassName="active">
+          <li>
             World
-          </Link>
-        </li>
-        <li>
-          <Link to='/culture'>
+          </li>
+        </Link>
+        <Link to='/culture' activeClassName="active">
+          <li>
             Pop Culture
-          </Link>
-        </li>
+          </li>
+        </Link>
       </ul>
     </nav>
   );

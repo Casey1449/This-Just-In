@@ -7,7 +7,6 @@ export default function ( state = allSources, action ) {
     let selected = state[page].map((item) => {
       if(item.id !== action.pick.id) { return item; }
         item.picked = !item.picked;
-        return item;
     return [...state, selected]; });
     return state;
 
@@ -16,7 +15,6 @@ export default function ( state = allSources, action ) {
       let preselected = state[page2].map((item) => {
         if(item.id !== action.pick.id) { return item; }
           item.picked = true;
-          return item;
       return [...state, preselected]; });
       return state;
 
