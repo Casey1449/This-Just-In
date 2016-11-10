@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles/App.css';
+import '../public/App.css';
 import Header from './containers/HeaderContainer';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
