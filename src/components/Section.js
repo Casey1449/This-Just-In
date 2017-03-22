@@ -17,7 +17,7 @@ export default (props) => {
 
   if (props.auth.status === 'LOGGED_IN'){
     return (
-      <section className='major-section-wrapper'>
+      <section className='major-section-wrapper' id={props.route.page}>
       { thisPageArticles ?
           articles.map( item =>
               <Article
@@ -30,7 +30,7 @@ export default (props) => {
     );
   } else {
     return (
-      <section className='major-section-wrapper'>
+      <section className='major-section-wrapper' id={props.route.page}>
         <h2> Log in to see your {props.route.page} page </h2>
       </section>
     );

@@ -1,4 +1,4 @@
-* {
+/** {
   box-sizing: border-box;
 }
 
@@ -122,4 +122,4 @@ button {
 .save-sources-button:hover {
   background-color: gray;
   color: white;
-}
+}*/
