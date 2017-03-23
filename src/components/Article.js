@@ -1,15 +1,20 @@
 import React from 'react';
+import { Media, Image } from 'react-bootstrap';
 
 export default ({article}) => {
+
   return(
-    <section>
-      <h2>{article.title}</h2>
-      <h4>{article.description}</h4>
-      <p>{article.author}</p>
-      <img alt={article.title}
-          src={article.urlToImage}
-          width='500' />
-      <p><a href={article.url} target="_blank">Link to full text</a></p>
-    </section>
+    <a href={article.url} target="_blank" className='news-list-link'>
+      <Media className='news-list-item'>
+        <Media.Left align='middle'>
+          <img src={article.urlToImage} alt={article.title} width={150}/>
+        </Media.Left>
+        <Media.Body>
+          <Media.Heading>{article.title}</Media.Heading>
+          <p><i>{article.description}</i></p>
+          <p>{article.author}</p>
+        </Media.Body>
+      </Media>
+    </a>
   );
 };

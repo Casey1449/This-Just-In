@@ -3,6 +3,7 @@ import SelectionForm from '../containers/SelectionFormContainer';
 import firebase from 'firebase';
 import _ from 'lodash';
 import { browserHistory } from "react-router";
+import { Button } from 'react-bootstrap';
 
 
 export default class SelectionPage extends React.Component{
@@ -52,7 +53,15 @@ export default class SelectionPage extends React.Component{
   render(){
     return (
       this.props.auth.uid ?
-        <div className='selection-page-wrapper'>
+        <div className='major-section-wrapper'>
+          <section className='selection-instructions'>
+            <h2>Select your favorite news sources below to create your newspaper.</h2>
+            <h3>...And be sure to save your selections:</h3>
+            <Button bsStyle='success' bsSize='large' className='save-sources-button'
+            onClick={()=>this.saveSources()}>
+            Save Selections
+            </Button>
+          </section>
           <div className='selection-container'>
             <SelectionForm page={'main'} source={this.props.allSources.main}/>
             <SelectionForm page={'sports'} source={this.props.allSources.sports}/>
@@ -61,13 +70,12 @@ export default class SelectionPage extends React.Component{
             <SelectionForm page={'world'} source={this.props.allSources.world} />
             <SelectionForm page={'culture'} source={this.props.allSources.culture} />
           </div>
-          <button className='save-sources-button'
-          onClick={()=>this.saveSources()}>
-          Save Selections
-          </button>
         </div>
       :
-        <h1>Log in to do stuff</h1>
+        <div className='major-section-wrapper'>
+          <h2>Log in to create your newspaper!</h2>
+        </div>
+
     );
   }
 }

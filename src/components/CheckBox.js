@@ -1,15 +1,15 @@
 import React from 'react';
+import { Checkbox } from 'react-bootstrap';
 
 module.exports = (props) => {
   return (
-    <label><input type='checkbox'
+    <Checkbox
             key={props.source}
             className={props.source}
             onChange={() => { props.pickSource(props.source, props.page);} }
             defaultChecked={props.bool}
-            />
+            >
       {props.name}
-      <br/>
-    </label>
+    </Checkbox>
   );
 };

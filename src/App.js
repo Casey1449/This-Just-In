@@ -36,10 +36,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
-        <Header />
-        {this.props.children}
-      </div>
+      <div className='container'>
+        <div className='App'>
+          <Header />
+          {this.props.children}
+        </div>
+      </div>  
     );
   }
 }
