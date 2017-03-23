@@ -7,6 +7,9 @@ module.exports = () => {
 
   return (
       <Nav bsStyle='tabs' justified activeKey={1}>
+        <LinkContainer to='/SelectionPage'>
+          <NavItem eventKey={7}>⚙ Settings</NavItem>
+        </LinkContainer>
         <LinkContainer to='/main' >
         <NavItem eventKey={1}>Main</NavItem>
         </LinkContainer>
@@ -24,9 +27,6 @@ module.exports = () => {
         </LinkContainer>
         <LinkContainer to='/culture' >
         <NavItem eventKey={6}>Culture</NavItem>
-        </LinkContainer>
-        <LinkContainer to='/SelectionPage'>
-        <NavItem eventKey={7}>⚙ Settings ⚙</NavItem>
         </LinkContainer>
 
 

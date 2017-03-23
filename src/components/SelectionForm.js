@@ -1,10 +1,10 @@
 import React from 'react';
 import CheckBox from '../containers/CheckBoxContainer';
+import { Panel } from 'react-bootstrap';
 
 export default (props) => {
 
-  return( <section className='source-selection-form'>
-            <h2> {props.page} page </h2>
+  return( <Panel collapsible className='source-selection-form' bsStyle='primary' header={props.page}>
               {props.source.map( item => <CheckBox
                                             key={Math.random()}
                                             page={props.page}
@@ -12,5 +12,5 @@ export default (props) => {
                                             name={item.name}
                                             bool={item.picked}
                                           /> )}
-          </section> );
+          </Panel> );
 };

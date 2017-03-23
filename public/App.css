@@ -1,3 +1,93 @@
+.container {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.nav-tabs>li.active>a {
+  background-color: #eee !important;
+  border-bottom: 1px solid #eee !important;
+}
+
+.header {
+  height: 20vh;
+  padding: 30px;
+}
+
+.main-banner {
+  font-family: 'Special Elite', cursive;
+  text-align: center;
+  font-size: 48px;
+}
+
+.authbox {
+  text-align: center;
+}
+
+.greeting {
+  display: inline;
+}
+
+.auth-button {
+  display: inline;
+  margin: 15px;
+}
+
+.news-list-item:hover {
+  background-color: lightblue;
+}
+
+.news-list-link:hover, .news-list-link:visited, .news-list-link:link, .news-list-link:active {
+  text-decoration: none;
+}
+
+.major-section-wrapper {
+  width: 100%;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #eee;
+  border-left: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+
+}
+
+.news-list-link, .news-list-item {
+  background-color: white;
+  margin:0;
+  color: rgb(40, 75, 100);
+  border: none;
+}
+
+.news-list-item {
+  margin: 4px;
+  padding: 10px;
+  box-shadow: 0px 0px 4px 1px rgba(200, 200, 200, 0.7);
+}
+
+.selection-instructions {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.selection-container {
+  position: relative;
+}
+
+.panel {
+  margin: auto;
+  margin-bottom: 10px;
+  max-width: 450px;
+}
+
+.panel-heading {
+  text-align: center;
+}
+
+.panel-body {
+  padding-left: 30%;
+}
 /** {
   box-sizing: border-box;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Article from './Article';
+import { Media } from 'react-bootstrap';
 
 export default (props) => {
 
