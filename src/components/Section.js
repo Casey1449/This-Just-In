@@ -1,6 +1,5 @@
 import React from 'react';
 import Article from './Article';
-import { Media } from 'react-bootstrap';
 
 export default (props) => {
 
@@ -18,16 +17,16 @@ export default (props) => {
 
   if (props.auth.status === 'LOGGED_IN'){
     return (
-      <section className='major-section-wrapper' id={props.route.page}>
-      { thisPageArticles ?
-          articles.map( item =>
-              <Article
-                article={ item }
-                key={ item.title }
-              /> )
-          : <h2> No {props.route.page} sources selected </h2>
-          }
-      </section>
+        <section className='major-section-wrapper'  id={props.route.page}>
+        { thisPageArticles ?
+            articles.map( item =>
+                <Article
+                  article={ item }
+                  key={ item.title }
+                /> )
+            : <h2> No {props.route.page} sources selected </h2>
+            }
+        </section>
     );
   } else {
     return (
