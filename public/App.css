@@ -1,9 +1,9 @@
-.container {
+/*.container {
   position: relative;
   margin-bottom: 25px;
-}
+}*/
 
-.nav-tabs>li.active>a {
+/*.nav-tabs>li.active>a {
   background-color: #eee !important;
   border-bottom: 1px solid #eee !important;
 }
@@ -11,7 +11,7 @@
 .header {
   height: 20vh;
   padding: 30px;
-}
+}*/
 
 .main-banner {
   font-family: 'Special Elite', cursive;
@@ -30,6 +30,43 @@
 .auth-button {
   display: inline;
   margin: 15px;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-default .navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #337ab7;
+    text-shadow: none;
+}
+
+.navbar-default {
+  /*background-image: none;
+  border: none;*/
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  /*background-color: white;*/
+  /*box-shadow: none;*/
+  /*color: #337ab7;*/
+}
+
+.navbar-default .navbar-nav>li>a{
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover, {
+  background-image: none;
+  border: none;
+  border-radius: none;
+  background-color: #eee;
+  box-shadow: none;
 }
 
 .news-list-item:hover {
@@ -53,11 +90,21 @@
 
 }
 
+@keyframes fadeInLoad {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
 .news-list-link, .news-list-item {
   background-color: white;
   margin:0;
   color: rgb(40, 75, 100);
   border: none;
+  animation: fadeInLoad 1s;
 }
 
 .news-list-item {
