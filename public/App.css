@@ -124,6 +124,13 @@
   }
 }
 
+@media(max-width: 500px){
+  .major-section-wrapper{
+    padding-left: 0%;
+    padding-right: 0%
+  }
+}
+
 .news-list-link, .news-list-item {
   background-color: white;
   margin:0;
