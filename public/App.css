@@ -99,6 +99,31 @@
     }
 }
 
+.media-image img{
+  width: 150px;
+}
+
+@media(max-width: 768px){
+  .media-image img{
+    margin: auto;
+  }
+}
+
+@media(max-width: 991px){
+  .media-image {
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+
+  .media-image img{
+    width: 100%;
+    margin: auto;
+  }
+}
+
 .news-list-link, .news-list-item {
   background-color: white;
   margin:0;

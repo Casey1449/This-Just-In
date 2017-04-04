@@ -7,7 +7,7 @@ export default ({article}) => {
     <a href={article.url} target="_blank" className='news-list-link'>
       <Media className='news-list-item'>
         <Media.Left align='middle' className='media-image'>
-          <img src={article.urlToImage} alt={article.title} width={150}/>
+          <img src={article.urlToImage} alt={article.title} />
         </Media.Left>
         <Media.Body>
           <Media.Heading>{article.title}</Media.Heading>
